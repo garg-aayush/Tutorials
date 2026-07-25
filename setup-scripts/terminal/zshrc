@@ -55,6 +55,9 @@ alias lla='eza -alh --git --sort=modified --icons' # list view with hidden files
 alias ll='eza -lh --git --sort=modified --icons'   # list view sorted by timestamp
 alias lt='eza -lh --git --sort=modified --tree --level=2 --icons' # tree view
 
+# ils = "image ls" (timg): show images in the terminal, 2 per row, titled, first frame only
+alias ils='timg --grid=2x1 --upscale=i --center --title --frames=1 '
+
 ########################################################################################
 # Claude Code helper functions (installed to ~/.cc_helper_fns by setup.sh; run `helpcc`)
 ########################################################################################
