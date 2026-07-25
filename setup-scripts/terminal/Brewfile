@@ -28,6 +28,7 @@ brew "ripgrep"                                 # fast recursive search (rg) — 
 brew "rtk"                                     # Rust Token Killer — token-optimizing CLI proxy (your hook uses it)
 brew "sevenzip"                                # 7-Zip archiver (7z) for compression/extraction
 brew "tailscale"                               # WireGuard-based mesh VPN CLI
+brew "timg"                                    # terminal image/video/PDF viewer; backs your ils alias
 brew "tmux"                                     # terminal multiplexer (split panes, persistent sessions)
 brew "trash"                                   # move files to macOS Trash instead of rm
 brew "vim"                                     # terminal text editor
