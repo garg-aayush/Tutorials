@@ -1,0 +1,119 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f4ff"/>
+      <stop offset="100%" stop-color="#e8eef8"/>
+    </linearGradient>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff5f0"/>
+      <stop offset="100%" stop-color="#faeae4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">Time Domain vs Frequency Domain (Power Spectral Density)</text>
+
+  <!-- LEFT PANEL: Time Domain -->
+  <rect x="20" y="50" width="420" height="200" rx="8" fill="url(#bg1)" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="230" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e6b">Time Domain — Mixed Signal</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="220" x2="410" y2="220" stroke="#555" stroke-width="1.5"/>
+  <line x1="60" y1="220" x2="60" y2="80" stroke="#555" stroke-width="1.5"/>
+  <text x="235" y="242" text-anchor="middle" font-size="11" fill="#555">Time (samples)</text>
+  <text x="45" y="150" text-anchor="middle" font-size="11" fill="#555" transform="rotate(-90,45,150)">Amplitude</text>
+
+  <!-- Composite signal: slow wave + fast wave + noise -->
+  <polyline points="
+    70,150 80,130 90,118 100,115 110,120 120,132 130,148 140,162 150,170 160,168 170,158 180,142 190,125 200,113 210,110 220,116 230,130 240,148 250,164 260,172 270,170 280,158 290,140 300,122 310,112 320,112 330,122 340,138 350,155 360,168 370,173 380,168 390,155 400,138
+  " fill="none" stroke="#3366cc" stroke-width="2"/>
+  <!-- Overlay faster oscillation -->
+  <polyline points="
+    70,150 75,144 80,135 85,128 90,122 95,118 100,118 105,122 110,128 115,130 120,136 125,140 130,148 135,154 140,160 145,166 150,170 155,168 160,164 165,160 170,154 175,148 180,138 185,132 190,125 195,118 200,114 205,112 210,114 215,118 220,122 225,128 230,136 235,142 240,150 245,156 250,164 255,170 260,172 265,170 270,166 275,160 280,154 285,146 290,138 295,130 300,122 305,116 310,114 315,114 320,118 325,124 330,130 335,138 340,144 345,150 350,158 355,164 360,170 365,174 370,172 375,168 380,162 385,156 390,148 395,142 400,136
+  " fill="none" stroke="#3366cc" stroke-width="1.8" opacity="0.7"/>
+
+  <text x="230" y="195" text-anchor="middle" font-size="11" fill="#3366cc" font-style="italic">y(t) = slow trend + 24h cycle + 8h cycle + noise</text>
+
+  <!-- Arrow between panels -->
+  <g transform="translate(440, 140)">
+    <rect x="0" y="0" width="30" height="30" rx="15" fill="#e74c3c" opacity="0.15"/>
+    <text x="15" y="14" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="bold">FFT</text>
+    <path d="M5,22 L25,22" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowRed)"/>
+  </g>
+  <defs>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <!-- RIGHT PANEL: Frequency Domain -->
+  <rect x="480" y="50" width="400" height="200" rx="8" fill="url(#bg2)" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="680" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#8b2500">Frequency Domain — Power Spectral Density</text>
+
+  <!-- Axes -->
+  <line x1="520" y1="220" x2="850" y2="220" stroke="#555" stroke-width="1.5"/>
+  <line x1="520" y1="220" x2="520" y2="80" stroke="#555" stroke-width="1.5"/>
+  <text x="685" y="242" text-anchor="middle" font-size="11" fill="#555">Frequency (cycles / hour)</text>
+  <text x="505" y="150" text-anchor="middle" font-size="11" fill="#555" transform="rotate(-90,505,150)">Power</text>
+
+  <!-- PSD peaks -->
+  <!-- DC / trend component -->
+  <rect x="540" y="100" width="20" height="120" rx="3" fill="#e74c3c" opacity="0.7"/>
+  <text x="550" y="95" text-anchor="middle" font-size="9" fill="#8b2500">Trend</text>
+
+  <!-- 24h cycle peak -->
+  <rect x="620" y="120" width="20" height="100" rx="3" fill="#e74c3c" opacity="0.7"/>
+  <text x="630" y="112" text-anchor="middle" font-size="9" fill="#8b2500">1/24h</text>
+
+  <!-- 8h cycle peak -->
+  <rect x="720" y="150" width="20" height="70" rx="3" fill="#e74c3c" opacity="0.7"/>
+  <text x="730" y="142" text-anchor="middle" font-size="9" fill="#8b2500">1/8h</text>
+
+  <!-- Noise floor -->
+  <line x1="530" y1="210" x2="845" y2="210" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+  <text x="845" y="207" text-anchor="end" font-size="9" fill="#999">noise floor</text>
+
+  <!-- Small noise bumps -->
+  <rect x="570" y="200" width="12" height="20" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="650" y="195" width="12" height="25" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="690" y="198" width="12" height="22" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="760" y="200" width="12" height="20" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="800" y="202" width="12" height="18" rx="2" fill="#e74c3c" opacity="0.3"/>
+
+  <!-- BOTTOM: Key Concepts -->
+  <rect x="20" y="270" width="860" height="210" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="450" y="295" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Key Spectral Concepts for Industrial Data</text>
+
+  <!-- Nyquist -->
+  <rect x="40" y="310" width="250" height="75" rx="6" fill="#e8f4fd" stroke="#4a90d9" stroke-width="1"/>
+  <text x="165" y="332" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5282">Nyquist Frequency</text>
+  <text x="165" y="350" text-anchor="middle" font-size="10" fill="#333">f_Nyquist = f_sample / 2</text>
+  <text x="165" y="366" text-anchor="middle" font-size="10" fill="#555">Cannot detect cycles faster than</text>
+  <text x="165" y="380" text-anchor="middle" font-size="10" fill="#555">2× your sampling interval</text>
+
+  <!-- Aliasing -->
+  <rect x="320" y="310" width="250" height="75" rx="6" fill="#fdf2e8" stroke="#e67e22" stroke-width="1"/>
+  <text x="445" y="332" text-anchor="middle" font-size="12" font-weight="bold" fill="#a0522d">Aliasing</text>
+  <text x="445" y="350" text-anchor="middle" font-size="10" fill="#333">High-freq signal sampled too slowly</text>
+  <text x="445" y="366" text-anchor="middle" font-size="10" fill="#555">→ appears as a fake low-freq signal</text>
+  <text x="445" y="380" text-anchor="middle" font-size="10" fill="#555">Common with 1-min historian data</text>
+
+  <!-- Practical tip -->
+  <rect x="600" y="310" width="260" height="75" rx="6" fill="#e8fde8" stroke="#27ae60" stroke-width="1"/>
+  <text x="730" y="332" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e7a1e">Industrial Rule of Thumb</text>
+  <text x="730" y="350" text-anchor="middle" font-size="10" fill="#333">Process time constant τ:</text>
+  <text x="730" y="366" text-anchor="middle" font-size="10" fill="#555">Sample at ≤ τ/10 for good dynamics</text>
+  <text x="730" y="380" text-anchor="middle" font-size="10" fill="#555">e.g., τ=5min → sample every 30s</text>
+
+  <!-- PSD interpretation -->
+  <rect x="40" y="400" width="530" height="65" rx="6" fill="#f5f0ff" stroke="#7c3aed" stroke-width="1"/>
+  <text x="305" y="422" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">Reading the PSD</text>
+  <text x="305" y="440" text-anchor="middle" font-size="10" fill="#333">Tall narrow peaks → periodic components (shift changes, day/night cycles, reactor oscillations)</text>
+  <text x="305" y="456" text-anchor="middle" font-size="10" fill="#333">Broad elevated regions → band-limited noise or quasi-periodic behaviour</text>
+
+  <!-- Flat floor note -->
+  <rect x="600" y="400" width="260" height="65" rx="6" fill="#fff5f5" stroke="#e53e3e" stroke-width="1"/>
+  <text x="730" y="422" text-anchor="middle" font-size="12" font-weight="bold" fill="#c53030">Watch For</text>
+  <text x="730" y="440" text-anchor="middle" font-size="10" fill="#333">Flat PSD → white noise (no structure)</text>
+  <text x="730" y="456" text-anchor="middle" font-size="10" fill="#333">1/f slope → integrated / drift process</text>
+</svg>

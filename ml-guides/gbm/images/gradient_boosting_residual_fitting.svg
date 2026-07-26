@@ -1,0 +1,61 @@
+<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="320" fill="#FAFAF8" rx="8"/>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Gradient boosting residual fitting — reactor yield prediction</text>
+  <text x="340" y="46" text-anchor="middle" font-size="12" fill="#5F5E5A">Actual yield = 91.0%  |  Learning rate η = 0.3</text>
+
+  <!-- Round 0 -->
+  <rect x="20" y="66" width="200" height="100" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="30" y="84" font-size="11" font-weight="500" fill="#534AB7" text-transform="uppercase" letter-spacing="0.5">Round 0 — Initialise</text>
+  <text x="30" y="104" font-size="13" font-weight="500" fill="#3C3489">Start with the mean</text>
+  <text x="30" y="124" font-size="12" fill="#5F5E5A" font-family="monospace">F₀ = mean(y) = 88.0</text>
+  <text x="30" y="144" font-size="12" fill="#5F5E5A" font-family="monospace">Residual = 91.0 − 88.0</text>
+  <text x="30" y="160" font-size="12" font-weight="500" fill="#0F6E56" font-family="monospace">         = +3.0</text>
+
+  <!-- Arrow -->
+  <line x1="224" y1="116" x2="238" y2="116" stroke="#5F5E5A" stroke-width="1"/>
+  <polygon points="238,112 246,116 238,120" fill="#5F5E5A"/>
+
+  <!-- Round 1 -->
+  <rect x="250" y="66" width="190" height="100" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="260" y="84" font-size="11" font-weight="500" fill="#993C1D" text-transform="uppercase" letter-spacing="0.5">Round 1 — Tree 1</text>
+  <text x="260" y="104" font-size="13" font-weight="500" fill="#712B13">Fit residuals</text>
+  <text x="260" y="124" font-size="12" fill="#5F5E5A" font-family="monospace">Tree learns: +3.0</text>
+  <text x="260" y="140" font-size="12" fill="#5F5E5A" font-family="monospace">η × 3.0 = +0.9</text>
+  <text x="260" y="156" font-size="12" fill="#5F5E5A" font-family="monospace">F₁ = 88.0 + 0.9 = 88.9</text>
+
+  <!-- Arrow -->
+  <line x1="444" y1="116" x2="458" y2="116" stroke="#5F5E5A" stroke-width="1"/>
+  <polygon points="458,112 466,116 458,120" fill="#5F5E5A"/>
+
+  <!-- Round 2 -->
+  <rect x="470" y="66" width="190" height="100" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="480" y="84" font-size="11" font-weight="500" fill="#854F0B" text-transform="uppercase" letter-spacing="0.5">Round 2 — Tree 2</text>
+  <text x="480" y="104" font-size="13" font-weight="500" fill="#633806">Fit remaining error</text>
+  <text x="480" y="124" font-size="12" fill="#5F5E5A" font-family="monospace">Tree learns: +2.1</text>
+  <text x="480" y="140" font-size="12" fill="#5F5E5A" font-family="monospace">η × 2.1 = +0.63</text>
+  <text x="480" y="156" font-size="12" fill="#5F5E5A" font-family="monospace">F₂ = 88.9 + 0.63 = 89.53</text>
+
+  <!-- Residual bars visualization -->
+  <text x="20" y="200" font-size="12" font-weight="500" fill="#2C2C2A">Residual shrinking over rounds:</text>
+
+  <!-- Bar labels -->
+  <text x="90" y="224" text-anchor="middle" font-size="11" fill="#5F5E5A">Round 0</text>
+  <text x="270" y="224" text-anchor="middle" font-size="11" fill="#5F5E5A">Round 1</text>
+  <text x="450" y="224" text-anchor="middle" font-size="11" fill="#5F5E5A">Round 2</text>
+
+  <!-- Bars (height proportional to residual) -->
+  <rect x="60" y="230" width="60" height="60" rx="4" fill="#534AB7" opacity="0.7"/>
+  <text x="90" y="264" text-anchor="middle" font-size="12" font-weight="500" fill="white">3.0</text>
+
+  <rect x="240" y="242" width="60" height="48" rx="4" fill="#993C1D" opacity="0.7"/>
+  <text x="270" y="270" text-anchor="middle" font-size="12" font-weight="500" fill="white">2.1</text>
+
+  <rect x="420" y="256" width="60" height="34" rx="4" fill="#854F0B" opacity="0.7"/>
+  <text x="450" y="277" text-anchor="middle" font-size="12" font-weight="500" fill="white">1.47</text>
+
+  <!-- Formula -->
+  <rect x="20" y="298" width="640" height="1" fill="#D3D1C7"/>
+  <text x="340" y="316" text-anchor="middle" font-size="12" fill="#5F5E5A" font-family="monospace">F_M(x) = mean(y) + η·h₁(x) + η·h₂(x) + … + η·h_M(x)</text>
+</svg>

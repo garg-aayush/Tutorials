@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="375" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">Variable Selection Network (TFT §4.2, Eqs 6-8)</text>
+
+  <!-- Input variables at bottom -->
+  <rect x="50" y="350" width="80" height="30" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <text x="90" y="370" text-anchor="middle" font-size="11" fill="#1565C0" font-weight="bold">ξ⁽¹⁾_t</text>
+
+  <rect x="170" y="350" width="80" height="30" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <text x="210" y="370" text-anchor="middle" font-size="11" fill="#1565C0" font-weight="bold">ξ⁽²⁾_t</text>
+
+  <text x="310" y="370" text-anchor="middle" font-size="16" fill="#888">⋯</text>
+
+  <rect x="360" y="350" width="80" height="30" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.2"/>
+  <text x="400" y="370" text-anchor="middle" font-size="11" fill="#1565C0" font-weight="bold">ξ⁽ᵐ⁾_t</text>
+
+  <text x="225" y="405" text-anchor="middle" font-size="10" fill="#888">Each ξ⁽ʲ⁾ ∈ ℝ^{d_model} (embedded via linear/entity embedding)</text>
+
+  <!-- Per-variable GRNs -->
+  <rect x="55" y="280" width="70" height="35" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2"/>
+  <text x="90" y="302" text-anchor="middle" font-size="10" fill="#E65100" font-weight="bold">GRN_1</text>
+  <line x1="90" y1="350" x2="90" y2="317" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <rect x="175" y="280" width="70" height="35" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2"/>
+  <text x="210" y="302" text-anchor="middle" font-size="10" fill="#E65100" font-weight="bold">GRN_2</text>
+  <line x1="210" y1="350" x2="210" y2="317" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <text x="310" y="302" text-anchor="middle" font-size="16" fill="#888">⋯</text>
+
+  <rect x="365" y="280" width="70" height="35" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="1.2"/>
+  <text x="400" y="302" text-anchor="middle" font-size="10" fill="#E65100" font-weight="bold">GRN_m</text>
+  <line x1="400" y1="350" x2="400" y2="317" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <text x="90" y="272" text-anchor="middle" font-size="9" fill="#E65100">ξ̃⁽¹⁾ [Eq 7]</text>
+  <text x="210" y="272" text-anchor="middle" font-size="9" fill="#E65100">ξ̃⁽²⁾</text>
+  <text x="400" y="272" text-anchor="middle" font-size="9" fill="#E65100">ξ̃⁽ᵐ⁾</text>
+
+  <!-- Flatten + GRN + Softmax path (right side) -->
+  <rect x="530" y="280" width="90" height="30" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.2"/>
+  <text x="575" y="300" text-anchor="middle" font-size="10" fill="#2E7D32" font-weight="bold">Flatten Ξ_t</text>
+
+  <!-- Arrows from inputs to flatten -->
+  <line x1="132" y1="365" x2="528" y2="295" stroke="#AAA" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="252" y1="365" x2="528" y2="295" stroke="#AAA" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="442" y1="365" x2="528" y2="295" stroke="#AAA" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+  <rect x="530" y="225" width="90" height="30" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.2"/>
+  <text x="575" y="245" text-anchor="middle" font-size="10" fill="#2E7D32" font-weight="bold">GRN(Ξ, c_s)</text>
+  <line x1="575" y1="280" x2="575" y2="257" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- c_s context -->
+  <rect x="660" y="225" width="70" height="30" rx="4" fill="#E0F7FA" stroke="#00695C" stroke-width="1.2"/>
+  <text x="695" y="245" text-anchor="middle" font-size="10" fill="#00695C" font-weight="bold">c_s</text>
+  <line x1="658" y1="240" x2="622" y2="240" stroke="#00695C" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#a)"/>
+
+  <rect x="530" y="170" width="90" height="30" rx="4" fill="#FCE4EC" stroke="#C62828" stroke-width="1.5"/>
+  <text x="575" y="190" text-anchor="middle" font-size="11" fill="#C62828" font-weight="bold">Softmax</text>
+  <line x1="575" y1="225" x2="575" y2="202" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <text x="575" y="160" text-anchor="middle" font-size="10" fill="#C62828">v = [v⁽¹⁾, v⁽²⁾, …, v⁽ᵐ⁾]  [Eq 6]</text>
+
+  <!-- Weighted sum node -->
+  <circle cx="245" cy="180" r="25" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="2"/>
+  <text x="245" y="175" text-anchor="middle" font-size="10" fill="#6A1B9A" font-weight="bold">Σ v⁽ʲ⁾</text>
+  <text x="245" y="192" text-anchor="middle" font-size="10" fill="#6A1B9A" font-weight="bold">· ξ̃⁽ʲ⁾</text>
+
+  <!-- Arrows from GRN outputs to weighted sum -->
+  <line x1="90" y1="280" x2="225" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="210" y1="280" x2="240" y2="207" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+  <line x1="400" y1="280" x2="265" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#a)"/>
+
+  <!-- Arrow from softmax weights to weighted sum -->
+  <line x1="528" y1="180" x2="272" y2="180" stroke="#C62828" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Output -->
+  <rect x="200" y="90" width="90" height="35" rx="5" fill="#EDE7F6" stroke="#4527A0" stroke-width="1.5"/>
+  <text x="245" y="112" text-anchor="middle" font-size="12" fill="#4527A0" font-weight="bold">ξ̃_t [Eq 8]</text>
+  <line x1="245" y1="155" x2="245" y2="127" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="245" y="75" text-anchor="middle" font-size="10" fill="#555">→ to LSTM Encoder/Decoder</text>
+
+  <!-- Annotation -->
+  <text x="660" y="330" font-size="9" fill="#888">Weights shared</text>
+  <text x="660" y="342" font-size="9" fill="#888">across time steps</text>
+</svg>

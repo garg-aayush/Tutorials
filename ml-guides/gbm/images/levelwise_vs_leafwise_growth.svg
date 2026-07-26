@@ -1,0 +1,117 @@
+<svg width="680" height="500" viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="500" fill="#FAFAF8" rx="8"/>
+
+  <!-- Level-wise section -->
+  <text x="340" y="28" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Level-wise growth (XGBoost default)</text>
+  <text x="340" y="46" text-anchor="middle" font-size="12" fill="#5F5E5A">Splits all nodes at each depth — produces balanced trees</text>
+
+  <!-- Root -->
+  <rect x="300" y="60" width="80" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="340" y="80" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Root</text>
+
+  <!-- Level 1 -->
+  <line x1="320" y1="92" x2="220" y2="112" stroke="#888780" stroke-width="0.5"/>
+  <line x1="360" y1="92" x2="460" y2="112" stroke="#888780" stroke-width="0.5"/>
+
+  <rect x="170" y="112" width="100" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="220" y="132" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Split 1</text>
+
+  <rect x="410" y="112" width="100" height="32" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="460" y="132" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Split 2</text>
+
+  <!-- Level 2 — all 4 nodes -->
+  <line x1="195" y1="144" x2="140" y2="168" stroke="#888780" stroke-width="0.5"/>
+  <line x1="245" y1="144" x2="300" y2="168" stroke="#888780" stroke-width="0.5"/>
+  <line x1="435" y1="144" x2="380" y2="168" stroke="#888780" stroke-width="0.5"/>
+  <line x1="485" y1="144" x2="540" y2="168" stroke="#888780" stroke-width="0.5"/>
+
+  <rect x="105" y="168" width="70" height="28" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="140" y="186" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Leaf</text>
+
+  <rect x="265" y="168" width="70" height="28" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="300" y="186" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Leaf</text>
+
+  <rect x="345" y="168" width="70" height="28" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="380" y="186" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Leaf</text>
+
+  <rect x="505" y="168" width="70" height="28" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="540" y="186" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#085041">Leaf</text>
+
+  <!-- Depth markers -->
+  <text x="80" y="80" text-anchor="end" font-size="11" fill="#888780">d = 0</text>
+  <text x="80" y="132" text-anchor="end" font-size="11" fill="#888780">d = 1</text>
+  <text x="80" y="186" text-anchor="end" font-size="11" fill="#888780">d = 2</text>
+
+  <text x="340" y="220" text-anchor="middle" font-size="12" fill="#5F5E5A">Balanced: all 4 leaves at same depth — uniform capacity allocation</text>
+
+  <!-- Separator -->
+  <line x1="40" y1="242" x2="640" y2="242" stroke="#D3D1C7" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+  <!-- Leaf-wise section -->
+  <text x="340" y="270" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Leaf-wise growth (LightGBM default)</text>
+  <text x="340" y="288" text-anchor="middle" font-size="12" fill="#5F5E5A">Splits the single leaf with highest gain — produces unbalanced trees</text>
+
+  <!-- Step labels -->
+  <text x="56" y="326" text-anchor="end" font-size="11" fill="#888780">Step 1</text>
+  <text x="56" y="386" text-anchor="end" font-size="11" fill="#888780">Step 2</text>
+  <text x="56" y="446" text-anchor="end" font-size="11" fill="#888780">Step 3</text>
+
+  <!-- Step 1: Root splits -->
+  <rect x="80" y="310" width="60" height="28" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="110" y="328" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3C3489">Root</text>
+
+  <line x1="140" y1="324" x2="164" y2="324" stroke="#5F5E5A" stroke-width="1"/>
+  <polygon points="164,320 172,324 164,328" fill="#5F5E5A"/>
+
+  <rect x="178" y="310" width="60" height="28" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="208" y="328" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#3C3489">A</text>
+
+  <rect x="250" y="310" width="60" height="28" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="280" y="328" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#444441">B</text>
+
+  <!-- Gain labels -->
+  <text x="208" y="352" text-anchor="middle" font-size="11" font-weight="500" fill="#534AB7">Gain: 120</text>
+  <text x="280" y="352" text-anchor="middle" font-size="11" fill="#888780">Gain: 40</text>
+
+  <!-- Step 2: A splits (highest), B stays -->
+  <rect x="80" y="370" width="60" height="28" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="110" y="388" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">A</text>
+
+  <line x1="140" y1="384" x2="164" y2="384" stroke="#5F5E5A" stroke-width="1"/>
+  <polygon points="164,380 172,384 164,388" fill="#5F5E5A"/>
+
+  <rect x="178" y="370" width="60" height="28" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="208" y="388" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">A1</text>
+
+  <rect x="250" y="370" width="60" height="28" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="280" y="388" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#712B13">A2</text>
+
+  <rect x="330" y="370" width="60" height="28" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="360" y="388" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#444441">B</text>
+
+  <text x="208" y="412" text-anchor="middle" font-size="11" font-weight="500" fill="#993C1D">Gain: 85</text>
+  <text x="280" y="412" text-anchor="middle" font-size="11" fill="#888780">Gain: 30</text>
+  <text x="360" y="412" text-anchor="middle" font-size="11" fill="#888780">Gain: 40</text>
+
+  <!-- Step 3: A1 splits again -->
+  <rect x="80" y="430" width="60" height="28" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="110" y="448" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#633806">A1</text>
+
+  <line x1="140" y1="444" x2="164" y2="444" stroke="#5F5E5A" stroke-width="1"/>
+  <polygon points="164,440 172,444 164,448" fill="#5F5E5A"/>
+
+  <rect x="178" y="430" width="60" height="28" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="208" y="448" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#633806">A1a</text>
+
+  <rect x="250" y="430" width="60" height="28" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="280" y="448" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#633806">A1b</text>
+
+  <rect x="330" y="430" width="60" height="28" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="360" y="448" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#444441">A2</text>
+
+  <rect x="410" y="430" width="60" height="28" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="440" y="448" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#444441">B</text>
+
+  <!-- Annotation -->
+  <text x="340" y="482" text-anchor="middle" font-size="12" fill="#5F5E5A">Unbalanced: depth 3 on left, depth 1 on right — capacity goes where gain is highest</text>
+</svg>

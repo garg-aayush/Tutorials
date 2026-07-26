@@ -1,0 +1,109 @@
+<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">Three Types of Time-Series Anomalies</text>
+
+  <!-- POINT ANOMALY -->
+  <rect x="15" y="50" width="280" height="240" rx="8" fill="#fff5f0" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="155" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">Point Anomaly</text>
+  <text x="155" y="92" text-anchor="middle" font-size="10" fill="#666">Single observation far from expected</text>
+
+  <!-- Axes -->
+  <line x1="40" y1="240" x2="270" y2="240" stroke="#888" stroke-width="1"/>
+  <line x1="40" y1="240" x2="40" y2="105" stroke="#888" stroke-width="1"/>
+
+  <!-- Normal signal -->
+  <polyline points="50,190 65,185 80,188 95,183 110,186 125,180 140,184 155,182 170,186 185,178 200,184 215,180 230,185 245,182 260,187" fill="none" stroke="#3366cc" stroke-width="2"/>
+  <g fill="#3366cc">
+    <circle cx="50" cy="190" r="2.5"/><circle cx="65" cy="185" r="2.5"/><circle cx="80" cy="188" r="2.5"/>
+    <circle cx="95" cy="183" r="2.5"/><circle cx="110" cy="186" r="2.5"/><circle cx="125" cy="180" r="2.5"/>
+    <circle cx="140" cy="184" r="2.5"/><circle cx="155" cy="182" r="2.5"/><circle cx="170" cy="186" r="2.5"/>
+    <circle cx="185" cy="178" r="2.5"/><circle cx="200" cy="184" r="2.5"/><circle cx="215" cy="180" r="2.5"/>
+    <circle cx="230" cy="185" r="2.5"/><circle cx="245" cy="182" r="2.5"/><circle cx="260" cy="187" r="2.5"/>
+  </g>
+
+  <!-- Anomalous point -->
+  <circle cx="155" cy="120" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <line x1="155" y1="125" x2="155" y2="182" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Label -->
+  <text x="175" y="118" font-size="10" fill="#c0392b" font-weight="bold">Spike!</text>
+
+  <text x="155" y="262" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Detection: z-score, Grubbs, IQR</text>
+  <text x="155" y="278" text-anchor="middle" font-size="9" fill="#555">e.g., sudden sensor glitch,</text>
+  <text x="155" y="290" text-anchor="middle" font-size="9" fill="#555">instrument spike, data entry error</text>
+
+  <!-- CONTEXTUAL ANOMALY -->
+  <rect x="310" y="50" width="280" height="240" rx="8" fill="#e8f4fd" stroke="#4a90d9" stroke-width="1.5"/>
+  <text x="450" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5282">Contextual Anomaly</text>
+  <text x="450" y="92" text-anchor="middle" font-size="10" fill="#666">Normal value, wrong context</text>
+
+  <!-- Axes -->
+  <line x1="335" y1="240" x2="565" y2="240" stroke="#888" stroke-width="1"/>
+  <line x1="335" y1="240" x2="335" y2="105" stroke="#888" stroke-width="1"/>
+
+  <!-- Seasonal pattern -->
+  <polyline points="345,200 355,190 365,175 375,160 385,150 395,148 405,155 415,168 425,185 435,200 445,210 455,200 465,188 475,170 485,155 495,145 505,143 515,150 525,165 535,180 545,195 555,208" fill="none" stroke="#3366cc" stroke-width="2"/>
+
+  <!-- Anomalous segment: value normal globally but wrong for this time -->
+  <polyline points="455,200 465,188 475,170" fill="none" stroke="#3366cc" stroke-width="2" opacity="0"/>
+  <polyline points="455,200 465,210 475,220" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <circle cx="465" cy="210" r="4" fill="#e74c3c"/>
+  <circle cx="475" cy="220" r="4" fill="#e74c3c"/>
+
+  <!-- Expected range band -->
+  <rect x="450" y="155" width="30" height="55" rx="3" fill="#4a90d9" opacity="0.1" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="495" y="175" font-size="9" fill="#4a90d9">expected</text>
+  <text x="495" y="185" font-size="9" fill="#4a90d9">range here</text>
+
+  <text x="475" y="235" font-size="9" fill="#c0392b" font-weight="bold">↑ Wrong for this phase</text>
+
+  <text x="450" y="262" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Detection: seasonal models, STL</text>
+  <text x="450" y="278" text-anchor="middle" font-size="9" fill="#555">e.g., night-shift temp during day,</text>
+  <text x="450" y="290" text-anchor="middle" font-size="9" fill="#555">summer value in winter window</text>
+
+  <!-- COLLECTIVE ANOMALY -->
+  <rect x="605" y="50" width="280" height="240" rx="8" fill="#e8fde8" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="745" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e7a1e">Collective Anomaly</text>
+  <text x="745" y="92" text-anchor="middle" font-size="10" fill="#666">Sequence of points abnormal together</text>
+
+  <!-- Axes -->
+  <line x1="630" y1="240" x2="860" y2="240" stroke="#888" stroke-width="1"/>
+  <line x1="630" y1="240" x2="630" y2="105" stroke="#888" stroke-width="1"/>
+
+  <!-- Normal signal -->
+  <polyline points="640,185 655,180 670,188 685,182 700,186" fill="none" stroke="#3366cc" stroke-width="2"/>
+  <polyline points="800,184 815,180 830,186 845,183" fill="none" stroke="#3366cc" stroke-width="2"/>
+
+  <!-- Anomalous subsequence -->
+  <rect x="700" y="115" width="100" height="130" rx="4" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+  <polyline points="700,186 710,170 720,155 725,148 730,155 735,145 740,138 745,145 750,135 755,142 760,148 770,155 780,165 790,175 800,184" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+
+  <text x="750" y="130" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">Unusual pattern</text>
+  <text x="750" y="142" text-anchor="middle" font-size="9" fill="#c0392b">(each point ok alone)</text>
+
+  <text x="745" y="262" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Detection: Matrix Profile, HMM</text>
+  <text x="745" y="278" text-anchor="middle" font-size="9" fill="#555">e.g., unusual oscillation pattern,</text>
+  <text x="745" y="290" text-anchor="middle" font-size="9" fill="#555">slow drift sequence, micro-stalls</text>
+
+  <!-- Bottom comparison -->
+  <rect x="15" y="310" width="870" height="105" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="450" y="335" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">Industrial Context: Why This Taxonomy Matters</text>
+
+  <text x="155" y="360" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="bold">Point</text>
+  <text x="155" y="376" text-anchor="middle" font-size="9" fill="#333">Instrument failure, communication</text>
+  <text x="155" y="390" text-anchor="middle" font-size="9" fill="#333">dropout, or data corruption</text>
+  <text x="155" y="406" text-anchor="middle" font-size="9" fill="#555" font-style="italic">→ Often filter/ignore in preprocessing</text>
+
+  <line x1="305" y1="350" x2="305" y2="410" stroke="#ddd" stroke-width="1"/>
+
+  <text x="450" y="360" text-anchor="middle" font-size="10" fill="#2c5282" font-weight="bold">Contextual</text>
+  <text x="450" y="376" text-anchor="middle" font-size="9" fill="#333">Operating mode mismatch, wrong</text>
+  <text x="450" y="390" text-anchor="middle" font-size="9" fill="#333">setpoint for current regime</text>
+  <text x="450" y="406" text-anchor="middle" font-size="9" fill="#555" font-style="italic">→ Requires regime-aware models</text>
+
+  <line x1="600" y1="350" x2="600" y2="410" stroke="#ddd" stroke-width="1"/>
+
+  <text x="745" y="360" text-anchor="middle" font-size="10" fill="#1e7a1e" font-weight="bold">Collective</text>
+  <text x="745" y="376" text-anchor="middle" font-size="9" fill="#333">Emerging degradation, catalyst</text>
+  <text x="745" y="390" text-anchor="middle" font-size="9" fill="#333">deactivation, fouling progression</text>
+  <text x="745" y="406" text-anchor="middle" font-size="9" fill="#555" font-style="italic">→ Most operationally important</text>
+</svg>

@@ -1,0 +1,149 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">PCA-Based Multivariate Process Monitoring</text>
+
+  <!-- LEFT: PCA Concept -->
+  <rect x="15" y="45" width="280" height="220" rx="8" fill="#f0f4ff" stroke="#4a6fa5" stroke-width="1.5"/>
+  <text x="155" y="68" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5282">PCA Projection</text>
+  <text x="155" y="83" text-anchor="middle" font-size="9" fill="#666">n sensors → k principal components (k ≪ n)</text>
+
+  <!-- Scatter plot showing PC1 vs PC2 -->
+  <line x1="45" y1="240" x2="270" y2="240" stroke="#888" stroke-width="1"/>
+  <line x1="45" y1="240" x2="45" y2="95" stroke="#888" stroke-width="1"/>
+  <text x="160" y="257" text-anchor="middle" font-size="9" fill="#666">PC₁</text>
+  <text x="33" y="167" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,33,167)">PC₂</text>
+
+  <!-- Normal cluster (ellipse) -->
+  <ellipse cx="145" cy="175" rx="65" ry="40" fill="#4a90d9" opacity="0.08" stroke="#4a90d9" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="145" y="225" text-anchor="middle" font-size="8" fill="#4a90d9">T² confidence ellipse (95%)</text>
+
+  <!-- Normal points -->
+  <g fill="#4a90d9" opacity="0.5">
+    <circle cx="130" cy="170" r="3"/><circle cx="155" cy="180" r="3"/><circle cx="140" cy="160" r="3"/>
+    <circle cx="160" cy="165" r="3"/><circle cx="125" cy="185" r="3"/><circle cx="170" cy="175" r="3"/>
+    <circle cx="135" cy="175" r="3"/><circle cx="150" cy="155" r="3"/><circle cx="165" cy="185" r="3"/>
+    <circle cx="120" cy="172" r="3"/><circle cx="145" cy="190" r="3"/><circle cx="155" cy="168" r="3"/>
+    <circle cx="138" cy="182" r="3"/><circle cx="162" cy="170" r="3"/><circle cx="148" cy="162" r="3"/>
+  </g>
+
+  <!-- Anomaly points outside ellipse -->
+  <circle cx="240" cy="120" r="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="248" y="112" font-size="8" fill="#e74c3c" font-weight="bold">High T²</text>
+  <circle cx="80" cy="105" r="5" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+  <text x="80" y="97" text-anchor="middle" font-size="8" fill="#d97706" font-weight="bold">High Q</text>
+
+  <!-- CENTER: T² and Q Statistics Over Time -->
+  <rect x="310" y="45" width="575" height="220" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="597" y="68" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Monitoring Statistics Over Time</text>
+
+  <!-- T² chart -->
+  <text x="325" y="90" font-size="10" font-weight="bold" fill="#2c5282">T² (Hotelling's)</text>
+  <text x="325" y="102" font-size="8" fill="#666">Distance in PC subspace</text>
+  <line x1="330" y1="150" x2="860" y2="150" stroke="#888" stroke-width="0.5"/>
+  <line x1="330" y1="150" x2="330" y2="90" stroke="#888" stroke-width="0.5"/>
+
+  <!-- T² signal - mostly low, spike in anomaly region -->
+  <polyline points="340,142 360,140 380,144 400,138 420,142 440,140 460,143 480,139 500,141 520,140 540,142 560,138 580,143 600,140 620,142 640,138 660,115 680,100 700,92 720,105 740,110 760,140 780,143 800,139 820,141 840,140" fill="none" stroke="#2c5282" stroke-width="1.8"/>
+
+  <!-- T² threshold -->
+  <line x1="330" y1="118" x2="860" y2="118" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="862" y="116" font-size="8" fill="#e74c3c">T²α</text>
+
+  <!-- Anomaly region -->
+  <rect x="655" y="85" width="90" height="70" rx="3" fill="#e74c3c" opacity="0.06"/>
+
+  <!-- Q chart -->
+  <text x="325" y="180" font-size="10" font-weight="bold" fill="#7c3aed">Q / SPE</text>
+  <text x="325" y="192" font-size="8" fill="#666">Residual (off-model) distance</text>
+  <line x1="330" y1="248" x2="860" y2="248" stroke="#888" stroke-width="0.5"/>
+  <line x1="330" y1="248" x2="330" y2="185" stroke="#888" stroke-width="0.5"/>
+
+  <!-- Q signal -->
+  <polyline points="340,240 360,238 380,242 400,236 420,240 440,238 460,241 480,237 500,239 520,238 540,240 560,237 580,241 600,238 620,240 640,236 660,220 680,208 700,195 720,200 740,212 760,238 780,241 800,237 820,239 840,238" fill="none" stroke="#7c3aed" stroke-width="1.8"/>
+
+  <!-- Q threshold -->
+  <line x1="330" y1="215" x2="860" y2="215" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="862" y="213" font-size="8" fill="#e74c3c">Qα</text>
+
+  <!-- Anomaly region on Q chart -->
+  <rect x="655" y="185" width="90" height="68" rx="3" fill="#e74c3c" opacity="0.06"/>
+
+  <!-- Anomaly label spanning both -->
+  <text x="700" y="82" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">ANOMALY</text>
+
+  <!-- BOTTOM: Interpretation Guide -->
+  <rect x="15" y="280" width="425" height="120" rx="8" fill="#e8fde8" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="227" y="303" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e7a1e">Interpreting T² vs Q</text>
+
+  <text x="35" y="325" font-size="10" fill="#333">High T², normal Q:</text>
+  <text x="195" y="325" font-size="9" fill="#555">unusual but within learned correlations</text>
+  <text x="35" y="345" font-size="10" fill="#333">Normal T², high Q:</text>
+  <text x="195" y="345" font-size="9" fill="#555">correlation structure has broken down</text>
+  <text x="35" y="365" font-size="10" fill="#333">Both high:</text>
+  <text x="195" y="365" font-size="9" fill="#555">large deviation + broken correlations</text>
+  <text x="35" y="387" font-size="9" fill="#666" font-style="italic">Q often more actionable: "something new is happening"</text>
+
+  <!-- Contribution Plot -->
+  <rect x="455" y="280" width="430" height="120" rx="8" fill="#fff8e1" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="670" y="303" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Contribution Plot (Root Cause)</text>
+  <text x="670" y="316" text-anchor="middle" font-size="9" fill="#666">Which sensor is driving the anomaly?</text>
+
+  <!-- Bar chart of contributions -->
+  <line x1="475" y1="385" x2="860" y2="385" stroke="#888" stroke-width="1"/>
+  
+  <rect x="490" y="360" width="35" height="25" fill="#4a90d9" opacity="0.4"/>
+  <text x="507" y="397" text-anchor="middle" font-size="8" fill="#555">T₁</text>
+
+  <rect x="540" y="340" width="35" height="45" fill="#e74c3c" opacity="0.8"/>
+  <text x="557" y="397" text-anchor="middle" font-size="8" fill="#e74c3c" font-weight="bold">P₁</text>
+
+  <rect x="590" y="365" width="35" height="20" fill="#4a90d9" opacity="0.4"/>
+  <text x="607" y="397" text-anchor="middle" font-size="8" fill="#555">F₁</text>
+
+  <rect x="640" y="370" width="35" height="15" fill="#4a90d9" opacity="0.4"/>
+  <text x="657" y="397" text-anchor="middle" font-size="8" fill="#555">T₂</text>
+
+  <rect x="690" y="330" width="35" height="55" fill="#e74c3c" opacity="0.8"/>
+  <text x="707" y="397" text-anchor="middle" font-size="8" fill="#e74c3c" font-weight="bold">P₂</text>
+
+  <rect x="740" y="368" width="35" height="17" fill="#4a90d9" opacity="0.4"/>
+  <text x="757" y="397" text-anchor="middle" font-size="8" fill="#555">F₂</text>
+
+  <rect x="790" y="362" width="35" height="23" fill="#4a90d9" opacity="0.4"/>
+  <text x="807" y="397" text-anchor="middle" font-size="8" fill="#555">L₁</text>
+
+  <!-- Highlight top contributors -->
+  <text x="625" y="328" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">← P₁ and P₂ are top contributors</text>
+
+  <!-- Bottom: Key Workflow -->
+  <rect x="15" y="415" width="870" height="90" rx="8" fill="#f5f0ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="450" y="438" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">PCA Monitoring Workflow</text>
+
+  <!-- Flow arrows -->
+  <rect x="35" y="450" width="140" height="40" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="105" y="465" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">1. Fit PCA</text>
+  <text x="105" y="478" text-anchor="middle" font-size="8" fill="#666">on normal training data</text>
+
+  <text x="190" y="472" font-size="14" fill="#7c3aed">→</text>
+
+  <rect x="205" y="450" width="140" height="40" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="275" y="465" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">2. Set Thresholds</text>
+  <text x="275" y="478" text-anchor="middle" font-size="8" fill="#666">T²α, Qα from χ² or F dist</text>
+
+  <text x="360" y="472" font-size="14" fill="#7c3aed">→</text>
+
+  <rect x="375" y="450" width="140" height="40" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="445" y="465" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">3. Project New Data</text>
+  <text x="445" y="478" text-anchor="middle" font-size="8" fill="#666">compute T², Q per sample</text>
+
+  <text x="530" y="472" font-size="14" fill="#7c3aed">→</text>
+
+  <rect x="545" y="450" width="140" height="40" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="615" y="465" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">4. Flag + Diagnose</text>
+  <text x="615" y="478" text-anchor="middle" font-size="8" fill="#666">contribution plots</text>
+
+  <text x="700" y="472" font-size="14" fill="#7c3aed">→</text>
+
+  <rect x="715" y="450" width="155" height="40" rx="6" fill="white" stroke="#7c3aed" stroke-width="1"/>
+  <text x="792" y="465" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">5. Operator Action</text>
+  <text x="792" y="478" text-anchor="middle" font-size="8" fill="#666">"check pressure on unit X"</text>
+</svg>

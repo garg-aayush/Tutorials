@@ -1,0 +1,142 @@
+<svg width="680" height="520" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="520" fill="#FAFAF8" rx="8"/>
+
+  <!-- Title -->
+  <text x="340" y="24" text-anchor="middle" font-size="14" font-weight="500" fill="#2C2C2A">Converting time series to supervised learning</text>
+  <text x="340" y="42" text-anchor="middle" font-size="12" fill="#5F5E5A">Prediction at t = 12:00, horizon h = 2h → predict temperature at 14:00</text>
+
+  <!-- Raw time series section -->
+  <text x="30" y="72" font-size="12" font-weight="500" fill="#2C2C2A">Raw time series (reactor outlet temperature, hourly)</text>
+
+  <!-- Time series bar -->
+  <rect x="30" y="82" width="620" height="36" rx="6" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/>
+
+  <!-- Time labels and values -->
+  <text x="74" y="96" text-anchor="middle" font-size="10" fill="#888780">08:00</text>
+  <text x="74" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">382</text>
+
+  <text x="163" y="96" text-anchor="middle" font-size="10" fill="#888780">09:00</text>
+  <text x="163" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">385</text>
+
+  <text x="252" y="96" text-anchor="middle" font-size="10" fill="#888780">10:00</text>
+  <text x="252" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">384</text>
+
+  <text x="341" y="96" text-anchor="middle" font-size="10" fill="#888780">11:00</text>
+  <text x="341" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">388</text>
+
+  <!-- Prediction time highlighted -->
+  <rect x="397" y="84" width="68" height="32" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="431" y="96" text-anchor="middle" font-size="10" fill="#185FA5">12:00</text>
+  <text x="431" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#0C447C">390</text>
+
+  <text x="520" y="96" text-anchor="middle" font-size="10" fill="#888780">13:00</text>
+  <text x="520" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#2C2C2A">387</text>
+
+  <!-- Target time highlighted in red -->
+  <rect x="575" y="84" width="68" height="32" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+  <text x="609" y="96" text-anchor="middle" font-size="10" fill="#A32D2D">14:00</text>
+  <text x="609" y="111" text-anchor="middle" font-size="12" font-weight="500" fill="#791F1F">391</text>
+
+  <!-- Labels for highlighted times -->
+  <text x="431" y="132" text-anchor="middle" font-size="10" font-weight="500" fill="#185FA5">Prediction time</text>
+  <text x="609" y="132" text-anchor="middle" font-size="10" font-weight="500" fill="#A32D2D">Target time</text>
+
+  <!-- Feature table section -->
+  <text x="30" y="162" font-size="12" font-weight="500" fill="#2C2C2A">Supervised learning row — features available at 12:00</text>
+
+  <!-- Table header -->
+  <rect x="30" y="172" width="620" height="26" rx="4" fill="#F1EFE8"/>
+  <text x="100" y="189" text-anchor="middle" font-size="11" font-weight="500" fill="#5F5E5A">Type</text>
+  <text x="260" y="189" text-anchor="middle" font-size="11" font-weight="500" fill="#5F5E5A">Feature</text>
+  <text x="420" y="189" text-anchor="middle" font-size="11" font-weight="500" fill="#5F5E5A">Value</text>
+  <text x="560" y="189" text-anchor="middle" font-size="11" font-weight="500" fill="#5F5E5A">Source</text>
+
+  <!-- Row 1: Lag -->
+  <rect x="30" y="200" width="620" height="26" rx="0" fill="none"/>
+  <rect x="55" y="204" width="90" height="18" rx="4" fill="#E6F1FB"/>
+  <text x="100" y="217" text-anchor="middle" font-size="11" fill="#0C447C">Lag</text>
+  <text x="260" y="217" text-anchor="middle" font-size="11" fill="#0C447C" font-family="monospace">temp_lag_1h</text>
+  <text x="420" y="217" text-anchor="middle" font-size="11" fill="#2C2C2A">387</text>
+  <text x="560" y="217" text-anchor="middle" font-size="11" fill="#5F5E5A">t−1 = 11:00</text>
+
+  <!-- Row 2: Lag -->
+  <rect x="30" y="228" width="620" height="26" rx="0" fill="#FAFAF8"/>
+  <rect x="55" y="232" width="90" height="18" rx="4" fill="#E6F1FB"/>
+  <text x="100" y="245" text-anchor="middle" font-size="11" fill="#0C447C">Lag</text>
+  <text x="260" y="245" text-anchor="middle" font-size="11" fill="#0C447C" font-family="monospace">temp_lag_2h</text>
+  <text x="420" y="245" text-anchor="middle" font-size="11" fill="#2C2C2A">388</text>
+  <text x="560" y="245" text-anchor="middle" font-size="11" fill="#5F5E5A">t−2 = 10:00</text>
+
+  <!-- Row 3: Lag -->
+  <rect x="30" y="256" width="620" height="26" rx="0" fill="none"/>
+  <rect x="55" y="260" width="90" height="18" rx="4" fill="#E6F1FB"/>
+  <text x="100" y="273" text-anchor="middle" font-size="11" fill="#0C447C">Lag</text>
+  <text x="260" y="273" text-anchor="middle" font-size="11" fill="#0C447C" font-family="monospace">temp_lag_4h</text>
+  <text x="420" y="273" text-anchor="middle" font-size="11" fill="#2C2C2A">385</text>
+  <text x="560" y="273" text-anchor="middle" font-size="11" fill="#5F5E5A">t−4 = 08:00</text>
+
+  <!-- Row 4: Rolling -->
+  <rect x="30" y="284" width="620" height="26" rx="0" fill="#FAFAF8"/>
+  <rect x="55" y="288" width="90" height="18" rx="4" fill="#E1F5EE"/>
+  <text x="100" y="301" text-anchor="middle" font-size="11" fill="#085041">Rolling</text>
+  <text x="260" y="301" text-anchor="middle" font-size="11" fill="#085041" font-family="monospace">temp_mean_3h</text>
+  <text x="420" y="301" text-anchor="middle" font-size="11" fill="#2C2C2A">387.3</text>
+  <text x="560" y="301" text-anchor="middle" font-size="11" fill="#5F5E5A">10:00–12:00</text>
+
+  <!-- Row 5: Rolling -->
+  <rect x="30" y="312" width="620" height="26" rx="0" fill="none"/>
+  <rect x="55" y="316" width="90" height="18" rx="4" fill="#E1F5EE"/>
+  <text x="100" y="329" text-anchor="middle" font-size="11" fill="#085041">Rolling</text>
+  <text x="260" y="329" text-anchor="middle" font-size="11" fill="#085041" font-family="monospace">temp_std_3h</text>
+  <text x="420" y="329" text-anchor="middle" font-size="11" fill="#2C2C2A">2.5</text>
+  <text x="560" y="329" text-anchor="middle" font-size="11" fill="#5F5E5A">10:00–12:00</text>
+
+  <!-- Row 6: Calendar (known future) -->
+  <rect x="30" y="340" width="620" height="26" rx="0" fill="#FAFAF8"/>
+  <rect x="55" y="344" width="90" height="18" rx="4" fill="#FAEEDA"/>
+  <text x="100" y="357" text-anchor="middle" font-size="11" fill="#633806">Calendar</text>
+  <text x="260" y="357" text-anchor="middle" font-size="11" fill="#633806" font-family="monospace">hour_of_day</text>
+  <text x="420" y="357" text-anchor="middle" font-size="11" fill="#2C2C2A">14</text>
+  <text x="560" y="357" text-anchor="middle" font-size="11" fill="#854F0B">Target time (known)</text>
+
+  <!-- Row 7: Calendar -->
+  <rect x="30" y="368" width="620" height="26" rx="0" fill="none"/>
+  <rect x="55" y="372" width="90" height="18" rx="4" fill="#FAEEDA"/>
+  <text x="100" y="385" text-anchor="middle" font-size="11" fill="#633806">Calendar</text>
+  <text x="260" y="385" text-anchor="middle" font-size="11" fill="#633806" font-family="monospace">is_day_shift</text>
+  <text x="420" y="385" text-anchor="middle" font-size="11" fill="#2C2C2A">1</text>
+  <text x="560" y="385" text-anchor="middle" font-size="11" fill="#854F0B">Target time (known)</text>
+
+  <!-- Row 8: LEAKAGE -->
+  <rect x="30" y="396" width="620" height="26" rx="0" fill="#FCEBEB"/>
+  <rect x="55" y="400" width="90" height="18" rx="4" fill="#F09595"/>
+  <text x="100" y="413" text-anchor="middle" font-size="11" font-weight="500" fill="#501313">LEAKAGE</text>
+  <text x="260" y="413" text-anchor="middle" font-size="11" fill="#791F1F" font-family="monospace" text-decoration="line-through">temp_lag_0h</text>
+  <text x="420" y="413" text-anchor="middle" font-size="11" fill="#791F1F" text-decoration="line-through">391</text>
+  <text x="560" y="413" text-anchor="middle" font-size="11" fill="#791F1F">14:00 (future!)</text>
+
+  <!-- Row 9: Target -->
+  <rect x="30" y="424" width="620" height="26" rx="0" fill="none"/>
+  <rect x="55" y="428" width="90" height="18" rx="4" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text x="100" y="441" text-anchor="middle" font-size="11" font-weight="500" fill="#2C2C2A">Target</text>
+  <text x="260" y="441" text-anchor="middle" font-size="11" font-weight="500" fill="#2C2C2A" font-family="monospace">temp_at_t+2h</text>
+  <text x="420" y="441" text-anchor="middle" font-size="11" font-weight="500" fill="#2C2C2A">391</text>
+  <text x="560" y="441" text-anchor="middle" font-size="11" fill="#5F5E5A">14:00</text>
+
+  <!-- Legend -->
+  <rect x="30" y="462" width="620" height="1" fill="#D3D1C7"/>
+
+  <rect x="30" y="476" width="12" height="12" rx="2" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="48" y="487" font-size="11" fill="#5F5E5A">Lag features (past values)</text>
+
+  <rect x="200" y="476" width="12" height="12" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="218" y="487" font-size="11" fill="#5F5E5A">Rolling window stats</text>
+
+  <rect x="360" y="476" width="12" height="12" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="378" y="487" font-size="11" fill="#5F5E5A">Known future covariates</text>
+
+  <rect x="540" y="476" width="12" height="12" rx="2" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+  <text x="558" y="487" font-size="11" fill="#5F5E5A">Leakage</text>
+
+  <text x="340" y="510" text-anchor="middle" font-size="11" fill="#5F5E5A">Calendar features use the target time (14:00) — this is NOT leakage because we know what hour it will be.</text>
+</svg>
