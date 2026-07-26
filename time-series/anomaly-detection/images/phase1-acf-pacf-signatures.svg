@@ -1,0 +1,183 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 14px; font-weight: 600; fill: #1a1a2e; }
+      .subtitle { font-size: 11px; fill: #6b7280; }
+      .label { font-size: 10px; fill: #374151; }
+      .axis-label { font-size: 9px; fill: #6b7280; }
+      .sig-band { fill: #dbeafe; opacity: 0.5; }
+      .bar-pos { fill: #2563eb; }
+      .bar-neg { fill: #2563eb; }
+      .sig-line { stroke: #93c5fd; stroke-width: 1; stroke-dasharray: 4,3; }
+      .axis-line { stroke: #d1d5db; stroke-width: 1; }
+      .zero-line { stroke: #9ca3af; stroke-width: 1; }
+      .annotation { font-size: 10px; fill: #dc2626; font-weight: 600; }
+      .panel-bg { fill: #fafbfc; stroke: #e5e7eb; stroke-width: 1; rx: 4; }
+    </style>
+  </defs>
+
+  <!-- Main title -->
+  <text x="450" y="28" text-anchor="middle" class="title" font-size="16">ACF / PACF Diagnostic Signatures</text>
+
+  <!-- Panel 1: AR(1) ACF — exponential decay -->
+  <rect x="20" y="45" width="420" height="210" class="panel-bg"/>
+  <text x="230" y="65" text-anchor="middle" class="title">AR(1) Process — ACF</text>
+  <text x="230" y="80" text-anchor="middle" class="subtitle">Exponential decay → tails off</text>
+
+  <!-- ACF axes -->
+  <line x1="60" y1="185" x2="410" y2="185" class="axis-line"/>
+  <line x1="60" y1="95" x2="60" y2="240" class="axis-line"/>
+  <text x="50" y="100" text-anchor="end" class="axis-label">1.0</text>
+  <text x="50" y="190" text-anchor="end" class="axis-label">0.0</text>
+  <text x="230" y="250" text-anchor="middle" class="axis-label">Lag</text>
+
+  <!-- Significance bands -->
+  <rect x="60" y="173" width="350" height="24" class="sig-band"/>
+  <line x1="60" y1="173" x2="410" y2="173" class="sig-line"/>
+  <line x1="60" y1="197" x2="410" y2="197" class="sig-line"/>
+
+  <!-- AR(1) ACF bars: exponential decay 0.8^k -->
+  <rect x="80" y="113" width="14" height="72" class="bar-pos"/>  <!-- lag 1: 0.8 -->
+  <rect x="110" y="127" width="14" height="58" class="bar-pos"/>  <!-- lag 2: 0.64 -->
+  <rect x="140" y="138" width="14" height="47" class="bar-pos"/>  <!-- lag 3: 0.512 -->
+  <rect x="170" y="147" width="14" height="38" class="bar-pos"/>  <!-- lag 4: 0.41 -->
+  <rect x="200" y="154" width="14" height="31" class="bar-pos"/>  <!-- lag 5: 0.33 -->
+  <rect x="230" y="159" width="14" height="26" class="bar-pos"/>  <!-- lag 6: 0.26 -->
+  <rect x="260" y="164" width="14" height="21" class="bar-pos"/>  <!-- lag 7: 0.21 -->
+  <rect x="290" y="167" width="14" height="18" class="bar-pos"/>  <!-- lag 8: 0.17 -->
+  <rect x="320" y="170" width="14" height="15" class="bar-pos"/>  <!-- lag 9: 0.13 -->
+  <rect x="350" y="173" width="14" height="12" class="bar-pos"/>  <!-- lag 10: 0.10 -->
+  <rect x="380" y="175" width="14" height="10" class="bar-pos"/>  <!-- lag 11: 0.08 -->
+
+  <!-- Lag labels -->
+  <text x="87" y="240" text-anchor="middle" class="axis-label">1</text>
+  <text x="147" y="240" text-anchor="middle" class="axis-label">3</text>
+  <text x="207" y="240" text-anchor="middle" class="axis-label">5</text>
+  <text x="267" y="240" text-anchor="middle" class="axis-label">7</text>
+  <text x="327" y="240" text-anchor="middle" class="axis-label">9</text>
+  <text x="387" y="240" text-anchor="middle" class="axis-label">11</text>
+
+  <!-- Decay curve annotation -->
+  <path d="M87,113 Q200,125 395,180" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="300" y="140" class="annotation">Slow exponential decay</text>
+
+  <!-- Panel 2: AR(1) PACF — cuts off after lag 1 -->
+  <rect x="460" y="45" width="420" height="210" class="panel-bg"/>
+  <text x="670" y="65" text-anchor="middle" class="title">AR(1) Process — PACF</text>
+  <text x="670" y="80" text-anchor="middle" class="subtitle">Cuts off after lag 1</text>
+
+  <!-- PACF axes -->
+  <line x1="500" y1="185" x2="850" y2="185" class="axis-line"/>
+  <line x1="500" y1="95" x2="500" y2="240" class="axis-line"/>
+  <text x="490" y="100" text-anchor="end" class="axis-label">1.0</text>
+  <text x="490" y="190" text-anchor="end" class="axis-label">0.0</text>
+  <text x="670" y="250" text-anchor="middle" class="axis-label">Lag</text>
+
+  <!-- Significance bands -->
+  <rect x="500" y="173" width="350" height="24" class="sig-band"/>
+  <line x1="500" y1="173" x2="850" y2="173" class="sig-line"/>
+  <line x1="500" y1="197" x2="850" y2="197" class="sig-line"/>
+
+  <!-- AR(1) PACF bars: spike at 1, rest ~0 -->
+  <rect x="520" y="113" width="14" height="72" class="bar-pos"/>  <!-- lag 1: 0.8 -->
+  <rect x="550" y="182" width="14" height="3" class="bar-pos"/>
+  <rect x="580" y="183" width="14" height="4" class="bar-neg"/>
+  <rect x="610" y="184" width="14" height="2" class="bar-pos"/>
+  <rect x="640" y="182" width="14" height="3" class="bar-neg"/>
+  <rect x="670" y="183" width="14" height="2" class="bar-pos"/>
+  <rect x="700" y="184" width="14" height="3" class="bar-neg"/>
+  <rect x="730" y="183" width="14" height="2" class="bar-pos"/>
+  <rect x="760" y="182" width="14" height="3" class="bar-neg"/>
+  <rect x="790" y="184" width="14" height="2" class="bar-pos"/>
+  <rect x="820" y="183" width="14" height="3" class="bar-neg"/>
+
+  <text x="527" y="240" text-anchor="middle" class="axis-label">1</text>
+  <text x="587" y="240" text-anchor="middle" class="axis-label">3</text>
+  <text x="647" y="240" text-anchor="middle" class="axis-label">5</text>
+  <text x="707" y="240" text-anchor="middle" class="axis-label">7</text>
+  <text x="767" y="240" text-anchor="middle" class="axis-label">9</text>
+  <text x="827" y="240" text-anchor="middle" class="axis-label">11</text>
+
+  <text x="560" y="110" class="annotation">← Single significant spike</text>
+
+  <!-- Panel 3: MA(1) ACF — cuts off after lag 1 -->
+  <rect x="20" y="275" width="420" height="210" class="panel-bg"/>
+  <text x="230" y="295" text-anchor="middle" class="title">MA(1) Process — ACF</text>
+  <text x="230" y="310" text-anchor="middle" class="subtitle">Cuts off after lag 1</text>
+
+  <line x1="60" y1="415" x2="410" y2="415" class="axis-line"/>
+  <line x1="60" y1="325" x2="60" y2="470" class="axis-line"/>
+  <text x="50" y="330" text-anchor="end" class="axis-label">1.0</text>
+  <text x="50" y="420" text-anchor="end" class="axis-label">0.0</text>
+  <text x="230" y="480" text-anchor="middle" class="axis-label">Lag</text>
+
+  <rect x="60" y="403" width="350" height="24" class="sig-band"/>
+  <line x1="60" y1="403" x2="410" y2="403" class="sig-line"/>
+  <line x1="60" y1="427" x2="410" y2="427" class="sig-line"/>
+
+  <!-- MA(1) ACF bars: spike at 1, rest ~0 -->
+  <rect x="80" y="365" width="14" height="50" class="bar-neg"/>  <!-- lag 1: -0.55 -->
+  <rect x="110" y="412" width="14" height="3" class="bar-pos"/>
+  <rect x="140" y="413" width="14" height="4" class="bar-neg"/>
+  <rect x="170" y="414" width="14" height="2" class="bar-pos"/>
+  <rect x="200" y="412" width="14" height="3" class="bar-neg"/>
+  <rect x="230" y="413" width="14" height="2" class="bar-pos"/>
+  <rect x="260" y="414" width="14" height="3" class="bar-neg"/>
+  <rect x="290" y="413" width="14" height="2" class="bar-pos"/>
+  <rect x="320" y="412" width="14" height="3" class="bar-neg"/>
+  <rect x="350" y="414" width="14" height="2" class="bar-pos"/>
+  <rect x="380" y="413" width="14" height="3" class="bar-neg"/>
+
+  <text x="87" y="470" text-anchor="middle" class="axis-label">1</text>
+  <text x="147" y="470" text-anchor="middle" class="axis-label">3</text>
+  <text x="207" y="470" text-anchor="middle" class="axis-label">5</text>
+  <text x="267" y="470" text-anchor="middle" class="axis-label">7</text>
+  <text x="327" y="470" text-anchor="middle" class="axis-label">9</text>
+  <text x="387" y="470" text-anchor="middle" class="axis-label">11</text>
+
+  <text x="130" y="360" class="annotation">Single spike, then zero →</text>
+
+  <!-- Panel 4: MA(1) PACF — tails off -->
+  <rect x="460" y="275" width="420" height="210" class="panel-bg"/>
+  <text x="670" y="295" text-anchor="middle" class="title">MA(1) Process — PACF</text>
+  <text x="670" y="310" text-anchor="middle" class="subtitle">Alternating decay → tails off</text>
+
+  <line x1="500" y1="415" x2="850" y2="415" class="axis-line"/>
+  <line x1="500" y1="325" x2="500" y2="470" class="axis-line"/>
+  <text x="490" y="330" text-anchor="end" class="axis-label">1.0</text>
+  <text x="490" y="420" text-anchor="end" class="axis-label">0.0</text>
+  <text x="670" y="480" text-anchor="middle" class="axis-label">Lag</text>
+
+  <rect x="500" y="403" width="350" height="24" class="sig-band"/>
+  <line x1="500" y1="403" x2="850" y2="403" class="sig-line"/>
+  <line x1="500" y1="427" x2="850" y2="427" class="sig-line"/>
+
+  <!-- MA(1) PACF bars: alternating decay -->
+  <rect x="520" y="365" width="14" height="50" class="bar-neg"/>  <!-- lag 1: -0.55 -->
+  <rect x="550" y="395" width="14" height="20" class="bar-neg"/>  <!-- lag 2: -0.22 -->
+  <rect x="580" y="403" width="14" height="12" class="bar-neg"/>  <!-- lag 3: -0.13 -->
+  <rect x="610" y="407" width="14" height="8" class="bar-neg"/>
+  <rect x="640" y="410" width="14" height="5" class="bar-neg"/>
+  <rect x="670" y="411" width="14" height="4" class="bar-neg"/>
+  <rect x="700" y="412" width="14" height="3" class="bar-neg"/>
+  <rect x="730" y="413" width="14" height="3" class="bar-neg"/>
+  <rect x="760" y="413" width="14" height="2" class="bar-neg"/>
+  <rect x="790" y="413" width="14" height="2" class="bar-neg"/>
+  <rect x="820" y="414" width="14" height="2" class="bar-neg"/>
+
+  <text x="527" y="470" text-anchor="middle" class="axis-label">1</text>
+  <text x="587" y="470" text-anchor="middle" class="axis-label">3</text>
+  <text x="647" y="470" text-anchor="middle" class="axis-label">5</text>
+  <text x="707" y="470" text-anchor="middle" class="axis-label">7</text>
+  <text x="767" y="470" text-anchor="middle" class="axis-label">9</text>
+  <text x="827" y="470" text-anchor="middle" class="axis-label">11</text>
+
+  <path d="M527,365 Q650,395 830,415" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="740" y="375" class="annotation">Gradual decay</text>
+
+  <!-- Summary box -->
+  <rect x="20" y="495" width="860" height="20" rx="3" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="450" y="509" text-anchor="middle" class="label" font-size="10">
+    Key rule: ACF reveals the total memory structure • PACF reveals the direct dependencies • Together they identify the model order
+  </text>
+</svg>

@@ -1,0 +1,145 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="ae" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#4a6fa5"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">Autoencoder-Based Anomaly Detection</text>
+
+  <!-- ARCHITECTURE SECTION -->
+  <!-- Input layer -->
+  <text x="65" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5282">Input</text>
+  <text x="65" y="73" text-anchor="middle" font-size="9" fill="#666">n sensors</text>
+  <g fill="#4a90d9">
+    <circle cx="65" cy="95" r="10" opacity="0.7"/><circle cx="65" cy="125" r="10" opacity="0.7"/>
+    <circle cx="65" cy="155" r="10" opacity="0.7"/><circle cx="65" cy="185" r="10" opacity="0.7"/>
+    <circle cx="65" cy="215" r="10" opacity="0.7"/><circle cx="65" cy="245" r="10" opacity="0.7"/>
+  </g>
+  <text x="65" y="99" text-anchor="middle" font-size="8" fill="white">T₁</text>
+  <text x="65" y="129" text-anchor="middle" font-size="8" fill="white">P₁</text>
+  <text x="65" y="159" text-anchor="middle" font-size="8" fill="white">F₁</text>
+  <text x="65" y="189" text-anchor="middle" font-size="8" fill="white">T₂</text>
+  <text x="65" y="219" text-anchor="middle" font-size="8" fill="white">P₂</text>
+  <text x="65" y="249" text-anchor="middle" font-size="8" fill="white">F₂</text>
+
+  <!-- Encoder hidden 1 -->
+  <g fill="#6a8fc7">
+    <circle cx="175" cy="115" r="9" opacity="0.6"/><circle cx="175" cy="150" r="9" opacity="0.6"/>
+    <circle cx="175" cy="185" r="9" opacity="0.6"/><circle cx="175" cy="220" r="9" opacity="0.6"/>
+  </g>
+
+  <!-- Connections input → hidden1 (simplified) -->
+  <g stroke="#4a90d9" stroke-width="0.5" opacity="0.3">
+    <line x1="75" y1="95" x2="166" y2="115"/><line x1="75" y1="125" x2="166" y2="115"/>
+    <line x1="75" y1="155" x2="166" y2="150"/><line x1="75" y1="185" x2="166" y2="185"/>
+    <line x1="75" y1="215" x2="166" y2="220"/><line x1="75" y1="245" x2="166" y2="220"/>
+    <line x1="75" y1="95" x2="166" y2="150"/><line x1="75" y1="245" x2="166" y2="185"/>
+  </g>
+
+  <!-- Bottleneck (latent) -->
+  <rect x="260" y="135" width="50" height="80" rx="6" fill="#7c3aed" opacity="0.15" stroke="#7c3aed" stroke-width="1.5"/>
+  <g fill="#7c3aed">
+    <circle cx="285" cy="155" r="9"/><circle cx="285" cy="195" r="9"/>
+  </g>
+  <text x="285" y="159" text-anchor="middle" font-size="7" fill="white">z₁</text>
+  <text x="285" y="199" text-anchor="middle" font-size="7" fill="white">z₂</text>
+  <text x="285" y="130" text-anchor="middle" font-size="9" font-weight="bold" fill="#5b21b6">Latent</text>
+
+  <!-- Connections hidden1 → bottleneck -->
+  <g stroke="#6a8fc7" stroke-width="0.5" opacity="0.3">
+    <line x1="184" y1="115" x2="276" y2="155"/><line x1="184" y1="150" x2="276" y2="155"/>
+    <line x1="184" y1="185" x2="276" y2="195"/><line x1="184" y1="220" x2="276" y2="195"/>
+  </g>
+
+  <!-- Decoder hidden 1 -->
+  <g fill="#6a8fc7">
+    <circle cx="395" cy="115" r="9" opacity="0.6"/><circle cx="395" cy="150" r="9" opacity="0.6"/>
+    <circle cx="395" cy="185" r="9" opacity="0.6"/><circle cx="395" cy="220" r="9" opacity="0.6"/>
+  </g>
+
+  <!-- Connections bottleneck → decoder hidden -->
+  <g stroke="#7c3aed" stroke-width="0.5" opacity="0.3">
+    <line x1="294" y1="155" x2="386" y2="115"/><line x1="294" y1="155" x2="386" y2="150"/>
+    <line x1="294" y1="195" x2="386" y2="185"/><line x1="294" y1="195" x2="386" y2="220"/>
+  </g>
+
+  <!-- Output layer -->
+  <text x="505" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#c0392b">Reconstruction</text>
+  <text x="505" y="73" text-anchor="middle" font-size="9" fill="#666">x̂ ≈ x</text>
+  <g fill="#e74c3c">
+    <circle cx="505" cy="95" r="10" opacity="0.7"/><circle cx="505" cy="125" r="10" opacity="0.7"/>
+    <circle cx="505" cy="155" r="10" opacity="0.7"/><circle cx="505" cy="185" r="10" opacity="0.7"/>
+    <circle cx="505" cy="215" r="10" opacity="0.7"/><circle cx="505" cy="245" r="10" opacity="0.7"/>
+  </g>
+  <text x="505" y="99" text-anchor="middle" font-size="8" fill="white">T̂₁</text>
+  <text x="505" y="129" text-anchor="middle" font-size="8" fill="white">P̂₁</text>
+  <text x="505" y="159" text-anchor="middle" font-size="8" fill="white">F̂₁</text>
+  <text x="505" y="189" text-anchor="middle" font-size="8" fill="white">T̂₂</text>
+  <text x="505" y="219" text-anchor="middle" font-size="8" fill="white">P̂₂</text>
+  <text x="505" y="249" text-anchor="middle" font-size="8" fill="white">F̂₂</text>
+
+  <!-- Connections decoder → output -->
+  <g stroke="#e74c3c" stroke-width="0.5" opacity="0.3">
+    <line x1="404" y1="115" x2="495" y2="95"/><line x1="404" y1="115" x2="495" y2="125"/>
+    <line x1="404" y1="150" x2="495" y2="155"/><line x1="404" y1="185" x2="495" y2="185"/>
+    <line x1="404" y1="220" x2="495" y2="215"/><line x1="404" y1="220" x2="495" y2="245"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="165" y="260" text-anchor="middle" font-size="10" fill="#4a6fa5" font-weight="bold">ENCODER</text>
+  <path d="M90,270 L90,268 L260,268 L260,270" fill="none" stroke="#4a6fa5" stroke-width="1"/>
+
+  <text x="400" y="260" text-anchor="middle" font-size="10" fill="#e74c3c" font-weight="bold">DECODER</text>
+  <path d="M310,270 L310,268 L490,268 L490,270" fill="none" stroke="#e74c3c" stroke-width="1"/>
+
+  <!-- RIGHT SIDE: Reconstruction Error -->
+  <rect x="560" y="55" width="325" height="210" rx="8" fill="#f5f0ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="722" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#5b21b6">Reconstruction Error Over Time</text>
+
+  <!-- Mini time series of reconstruction error -->
+  <line x1="585" y1="230" x2="860" y2="230" stroke="#888" stroke-width="1"/>
+  <line x1="585" y1="230" x2="585" y2="90" stroke="#888" stroke-width="1"/>
+  <text x="722" y="248" text-anchor="middle" font-size="9" fill="#666">Time</text>
+  <text x="575" y="160" text-anchor="middle" font-size="9" fill="#666" transform="rotate(-90,575,160)">‖x − x̂‖²</text>
+
+  <!-- Normal error (low, noisy) -->
+  <polyline points="595,210 605,208 615,212 625,206 635,210 645,205 655,209 665,207 675,211 685,204 695,208 705,206 715,210 725,205 735,180 745,155 755,130 765,110 775,105 785,115 795,140 805,165 815,195 825,208 835,205 845,210 855,207" fill="none" stroke="#7c3aed" stroke-width="2"/>
+
+  <!-- Threshold line -->
+  <line x1="585" y1="170" x2="860" y2="170" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="862" y="167" font-size="9" fill="#e74c3c" font-weight="bold">threshold</text>
+
+  <!-- Anomaly region highlight -->
+  <rect x="730" y="90" width="65" height="140" rx="3" fill="#e74c3c" opacity="0.08"/>
+  <text x="762" y="100" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="bold">ANOMALY</text>
+
+  <!-- Normal label -->
+  <text x="650" y="196" text-anchor="middle" font-size="9" fill="#27ae60" font-weight="bold">Normal</text>
+  <text x="650" y="208" text-anchor="middle" font-size="8" fill="#555">low error = learned pattern</text>
+
+  <!-- BOTTOM: Key Insight Boxes -->
+  <rect x="15" y="290" width="280" height="85" rx="8" fill="#e8fde8" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="155" y="312" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e7a1e">Training: Normal Data Only</text>
+  <text x="155" y="330" text-anchor="middle" font-size="10" fill="#333">AE learns to compress &amp; reconstruct</text>
+  <text x="155" y="345" text-anchor="middle" font-size="10" fill="#333">normal operating patterns.</text>
+  <text x="155" y="362" text-anchor="middle" font-size="9" fill="#555" font-style="italic">Semi-supervised: no anomaly labels needed</text>
+
+  <rect x="310" y="290" width="280" height="85" rx="8" fill="#fff5f0" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="450" y="312" text-anchor="middle" font-size="12" font-weight="bold" fill="#c0392b">Inference: Error = Anomaly Score</text>
+  <text x="450" y="330" text-anchor="middle" font-size="10" fill="#333">Novel/abnormal patterns can't be</text>
+  <text x="450" y="345" text-anchor="middle" font-size="10" fill="#333">reconstructed well → high error.</text>
+  <text x="450" y="362" text-anchor="middle" font-size="9" fill="#555" font-style="italic">Per-sensor error → which variable is off?</text>
+
+  <rect x="605" y="290" width="280" height="85" rx="8" fill="#fff8e1" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="745" y="312" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Industrial Strengths</text>
+  <text x="745" y="330" text-anchor="middle" font-size="10" fill="#333">Handles 100s of correlated sensors.</text>
+  <text x="745" y="345" text-anchor="middle" font-size="10" fill="#333">Captures nonlinear relationships.</text>
+  <text x="745" y="362" text-anchor="middle" font-size="9" fill="#555" font-style="italic">Watch: retraining needed for new regimes</text>
+
+  <!-- Bottom summary -->
+  <rect x="15" y="395" width="870" height="70" rx="8" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="450" y="418" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Threshold Selection Strategy</text>
+  <text x="450" y="438" text-anchor="middle" font-size="10" fill="#333">Train on clean normal data → compute error on validation set → set threshold at percentile (e.g., 99th or 99.5th)</text>
+  <text x="450" y="454" text-anchor="middle" font-size="10" fill="#555">Or use dynamic threshold: flag when error exceeds μ + k·σ of a rolling window of recent errors</text>
+</svg>

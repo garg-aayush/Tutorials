@@ -1,0 +1,82 @@
+<svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="360" fill="#FAFAF8" rx="8"/>
+
+  <!-- Time axis -->
+  <line x1="60" y1="30" x2="620" y2="30" stroke="#444441" stroke-width="0.5"/>
+  <text x="60" y="20" text-anchor="middle" font-size="11" fill="#5F5E5A">Jan 2022</text>
+  <text x="200" y="20" text-anchor="middle" font-size="11" fill="#5F5E5A">Jul 2022</text>
+  <text x="340" y="20" text-anchor="middle" font-size="11" fill="#5F5E5A">Jan 2023</text>
+  <text x="480" y="20" text-anchor="middle" font-size="11" fill="#5F5E5A">Jul 2023</text>
+  <text x="620" y="20" text-anchor="middle" font-size="11" fill="#5F5E5A">Jan 2024</text>
+
+  <!-- Tick marks -->
+  <line x1="60" y1="26" x2="60" y2="34" stroke="#444441" stroke-width="0.5"/>
+  <line x1="200" y1="26" x2="200" y2="34" stroke="#444441" stroke-width="0.5"/>
+  <line x1="340" y1="26" x2="340" y2="34" stroke="#444441" stroke-width="0.5"/>
+  <line x1="480" y1="26" x2="480" y2="34" stroke="#444441" stroke-width="0.5"/>
+  <line x1="620" y1="26" x2="620" y2="34" stroke="#444441" stroke-width="0.5"/>
+
+  <!-- Fold 1 -->
+  <text x="48" y="68" text-anchor="end" font-size="12" fill="#5F5E5A">Fold 1</text>
+  <rect x="60" y="52" width="280" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="200" y="70" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Train</text>
+
+  <rect x="340" y="52" width="140" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="410" y="70" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Validate</text>
+
+  <rect x="480" y="52" width="140" height="28" rx="4" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5" opacity="0.5"/>
+  <text x="550" y="70" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#B4B2A9">Unseen</text>
+
+  <!-- Fold 2 -->
+  <text x="48" y="118" text-anchor="end" font-size="12" fill="#5F5E5A">Fold 2</text>
+  <rect x="60" y="102" width="420" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="270" y="120" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Train (expanded)</text>
+
+  <rect x="480" y="102" width="140" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="550" y="120" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Validate</text>
+
+  <!-- Sliding window variant label -->
+  <text x="340" y="160" text-anchor="middle" font-size="13" font-weight="500" fill="#2C2C2A">Sliding window variant</text>
+
+  <!-- Fold 3 -->
+  <text x="48" y="188" text-anchor="end" font-size="12" fill="#5F5E5A">Fold 3</text>
+
+  <rect x="60" y="172" width="140" height="28" rx="4" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5" opacity="0.5"/>
+  <text x="130" y="190" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#B4B2A9">Dropped</text>
+
+  <rect x="200" y="172" width="280" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="340" y="190" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#085041">Train (6 months)</text>
+
+  <rect x="480" y="172" width="140" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="550" y="190" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#712B13">Validate</text>
+
+  <!-- Wrong approach section -->
+  <rect x="30" y="220" width="620" height="1" fill="#D3D1C7"/>
+  <text x="340" y="246" text-anchor="middle" font-size="13" font-weight="500" fill="#A32D2D">✗  What NOT to do: random train/test split</text>
+
+  <!-- Random interleaved blocks -->
+  <text x="48" y="278" text-anchor="end" font-size="12" fill="#A32D2D">Wrong</text>
+
+  <rect x="60" y="262" width="50" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <rect x="110" y="262" width="30" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <rect x="140" y="262" width="70" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <rect x="210" y="262" width="40" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <rect x="250" y="262" width="60" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <rect x="310" y="262" width="30" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <rect x="340" y="262" width="90" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <rect x="430" y="262" width="50" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <rect x="480" y="262" width="80" height="28" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <rect x="560" y="262" width="60" height="28" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+
+  <!-- Explanation -->
+  <text x="340" y="310" text-anchor="middle" font-size="12" fill="#5F5E5A">Model sees future data in training — exploits autocorrelation</text>
+  <text x="340" y="326" text-anchor="middle" font-size="12" fill="#5F5E5A">Validation error is wildly optimistic</text>
+
+  <!-- Legend -->
+  <rect x="180" y="346" width="12" height="12" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="198" y="356" font-size="11" fill="#5F5E5A">Train</text>
+  <rect x="240" y="346" width="12" height="12" rx="2" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="258" y="356" font-size="11" fill="#5F5E5A">Validate</text>
+  <rect x="310" y="346" width="12" height="12" rx="2" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5" opacity="0.5"/>
+  <text x="328" y="356" font-size="11" fill="#5F5E5A">Unseen / dropped</text>
+</svg>
